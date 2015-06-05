@@ -1,4 +1,4 @@
-# WebIntent Android Plugin for Cordova 3.X #
+# WebIntent Android Plugin for Cordova 3.X+ #
 By Boris Smus
 
 Phonegap/Cordova 2.X version available at the [WebIntent](https://github.com/phonegap/phonegap-plugins/tree/master/Android/WebIntent) plugin site.
