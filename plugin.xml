@@ -21,5 +21,8 @@
         </config-file>
 
         <source-file src="src/android/WebIntent.java" target-dir="src/com/borismus/webintent" />
+	<config-file target="AndroidManifest.xml" parent="/manifest">
+		<uses-permission android:name="$PACKAGE_NAME.permission.PROCESS_OUTGOING_CALLS"/>
+	</config-file>
     </platform>
 </plugin>
