@@ -15,6 +15,7 @@
     <!-- android -->
     <platform name="android">
         <source-file src="src/android/WebIntent.java" target-dir="src/com/borismus/webintent" />
+        <source-file src="src/android/OutgoingCallReceiver.java" target-dir="src/com/borismus/webintent" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="WebIntent" >
                 <param name="android-package" value="com.borismus.webintent.WebIntent"/>
