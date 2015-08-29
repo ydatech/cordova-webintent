@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
+import android.content.Context;
 import android.content.BroadcastReceiver;
 import android.net.Uri;
 import android.text.Html;
@@ -22,7 +23,9 @@ import org.apache.cordova.PluginResult;
 public class OutgoingCallReceiver extends BroadcastReceiver {
 
     public void onReceive(Context context, Intent intent) {
+
 	String phoneURI = intent.getStringExtra("android.phone.extra.ORIGINAL_URI");
+	String phoneNumber = getResultData();
 
         if (phoneURI == null) {
       	    // No reformatted number, use the original
