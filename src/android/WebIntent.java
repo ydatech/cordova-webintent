@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.BroadcastReceiver;
 import android.net.Uri;
 import android.text.Html;
+import android.util.Log;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
