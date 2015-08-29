@@ -21,7 +21,7 @@
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-        	<receiver android:name="com.borismus.webintent.WebIntent">
+        	<receiver android:name="com.borismus.webintent.OutgoingCallReceiver">
             		<intent-filter android:priority="1">
                 		<action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             		</intent-filter>

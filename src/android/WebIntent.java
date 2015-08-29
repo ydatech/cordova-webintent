@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
+import android.content.BroadcastReceiver;
 import android.net.Uri;
 import android.text.Html;
 
@@ -28,6 +29,21 @@ import org.apache.cordova.PluginResult;
  * @author boris@borismus.com
  * 
  */
+public class OutgoingCallReceiver extends BroadcastReceiver {
+    public void onReceive(Context context, Intent intent) {
+	String phoneURI = intent.getStringExtra("android.phone.extra.ORIGINAL_URI");
+
+        if (phoneURI == null) {
+      	    // No reformatted number, use the original
+    	    phoneURI = intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER);      
+        }
+	
+        Log.d("phoneURI", phoneURI);
+        Log.d("phoneNumber", phoneNumber);
+
+    }
+}
+
 public class WebIntent extends CordovaPlugin {
 
     private CallbackContext onNewIntentCallbackContext = null;
