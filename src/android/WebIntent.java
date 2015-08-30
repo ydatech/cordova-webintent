@@ -101,15 +101,16 @@ public class WebIntent extends CordovaPlugin {
             } else if (action.equals("getTel")) {
 		Log.d("FluentCloud", "FluentCloud Running getTel");
                 if (args.length() != 0) {
+		    Log.d("FluentCloud", "Action is invalid");
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
                     return false;
                 }
                 Intent i = ((CordovaActivity)this.cordova.getActivity()).getIntent();
                 String tel = i.getStringExtra(Intent.EXTRA_PHONE_NUMBER).toString();
 		String phonenumber = i.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
-		Log.d("FluentCloud: We are in activity: " , this.cordova.getActivity().toString());
-		Log.d("FluentCloud: Number To Dial ----> " , tel);
-		Log.d("FluentCloud: Phone Number To Dial ----> " , phonenumber);
+		Log.d("FluentCloud", "We are in activity: " , this.cordova.getActivity().toString());
+		Log.d("FluentCloud", "Number To Dial ----> " , tel);
+		Log.d("FluentCloud", "Phone Number To Dial ----> " , phonenumber);
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, tel));
                 return true;
             } else if (action.equals("getUri")) {
