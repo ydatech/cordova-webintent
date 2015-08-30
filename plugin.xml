@@ -25,6 +25,7 @@
         	<receiver android:name="com.borismus.webintent.OutgoingCallReceiver">
             		<intent-filter android:priority="1">
                 		<action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+				<category android:name="android.intent.category.DEFAULT" />
             		</intent-filter>
         	</receiver>
         </config-file>
