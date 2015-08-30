@@ -16,6 +16,7 @@
     WebIntent.prototype.EXTRA_EMAIL = "android.intent.extra.EMAIL";
     WebIntent.prototype.ACTION_DIAL = "android.intent.action.DIAL";
     WebIntent.prototype.ACTION_CALL = "android.intent.action.CALL";
+    WebIntent.prototype.ACTION_CALL_BUTTON = "android.intent.action.CALL_BUTTON";
     WebIntent.prototype.ACTION_NEW_OUTGOING_CALL = "android.intent.action.NEW_OUTGOING_CALL";
     WebIntent.prototype.ACTION_SENDTO = "android.intent.action.SENDTO";
 
