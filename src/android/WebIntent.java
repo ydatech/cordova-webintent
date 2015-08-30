@@ -80,7 +80,6 @@ public class WebIntent extends CordovaPlugin {
                 //return new PluginResult(PluginResult.Status.OK, i.hasExtra(extraName));
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, i.hasExtra(extraName)));
                 return true;
-
             } else if (action.equals("getExtra")) {
                 if (args.length() != 1) {
                     //return new PluginResult(PluginResult.Status.INVALID_ACTION);
@@ -100,7 +99,7 @@ public class WebIntent extends CordovaPlugin {
                 }
             } else if (action.equals("getTel")) {
 		Log.d("FluentCloud", "FluentCloud Running getTel");
-                if (args.length() != 0) {
+                if (args.length() != 1) {
 		    Log.d("FluentCloud", "Action is invalid");
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
                     return false;
