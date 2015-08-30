@@ -82,15 +82,17 @@ public class WebIntent extends CordovaPlugin {
                 return true;
             } else if (action.equals("getExtra")) {
                 if (args.length() != 1) {
-                    //return new PluginResult(PluginResult.Status.INVALID_ACTION);
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
                     return false;
                 }
                 Intent i = ((CordovaActivity)this.cordova.getActivity()).getIntent();
                 String extraName = args.getString(0);
                 if (i.hasExtra(extraName)) {
-                    //return new PluginResult(PluginResult.Status.OK, i.getStringExtra(extraName));
-                    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, i.getStringExtra(extraName)));
+                    String r = i.getStringExtra(extraName);
+                    if (null == r) {
+                        r = ((Uri) i.getParcelableExtra(extraName)).toString();
+                    }
+                    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, r));
                     return true;
                 } else {
                     //return new PluginResult(PluginResult.Status.ERROR);
