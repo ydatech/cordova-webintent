@@ -98,6 +98,15 @@ public class WebIntent extends CordovaPlugin {
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR));
                     return false;
                 }
+            } else if (action.equals("getTel")) {
+                if (args.length() != 0) {
+                    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
+                    return false;
+                }
+                Intent i = ((CordovaActivity)this.cordova.getActivity()).getIntent();
+                String tel = i.getStringExtra(Intent.EXTRA_PHONE_NUMBER).toString();
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, tel));
+                return true;
             } else if (action.equals("getUri")) {
                 if (args.length() != 0) {
                     //return new PluginResult(PluginResult.Status.INVALID_ACTION);
