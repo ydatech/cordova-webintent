@@ -14,6 +14,7 @@
     WebIntent.prototype.EXTRA_SUBJECT = "android.intent.extra.SUBJECT";
     WebIntent.prototype.EXTRA_STREAM = "android.intent.extra.STREAM";
     WebIntent.prototype.EXTRA_EMAIL = "android.intent.extra.EMAIL";
+    WebIntent.prototype.EXTRA_PHONE_NUMBER = "android.intent.extra.PHONE_NUMBER";
     WebIntent.prototype.ACTION_DIAL = "android.intent.action.DIAL";
     WebIntent.prototype.ACTION_CALL = "android.intent.action.CALL";
     WebIntent.prototype.ACTION_CALL_BUTTON = "android.intent.action.CALL_BUTTON";
