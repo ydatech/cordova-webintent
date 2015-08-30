@@ -45,6 +45,13 @@
         }, 'WebIntent', 'getUri', []);
     };
 
+    WebIntent.prototype.getTel = function(success, fail) {
+        return cordova.exec(function(args) {
+            success(args);
+        }, function(args) {
+            fail(args);
+        }, 'WebIntent', 'getTel', []);
+    };
     WebIntent.prototype.getExtra = function(params, success, fail) {
         return cordova.exec(function(args) {
             success(args);
