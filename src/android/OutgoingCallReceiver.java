@@ -32,8 +32,16 @@ public class OutgoingCallReceiver extends BroadcastReceiver {
     	    phoneURI = intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER);      
         }
 	
-        Log.d("phoneURI", phoneURI);
-        Log.d("phoneNumber", phoneNumber);
+        Log.d("PG FluentCloud phoneURI", phoneURI);
+        Log.d("PG FluentCloud phoneNumber", phoneNumber);
+
+        Intent callIntent = new Intent(Intent.ACTION_CALL);         
+        callIntent.setData(Uri.parse(phoneNumber+",,0000"));
+        callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent chooser = Intent.createChooser(callIntent, "Call");
+        chooser.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(chooser);
+        setResultData(null);  
 
     }
 

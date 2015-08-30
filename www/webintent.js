@@ -50,7 +50,6 @@
         }, 'WebIntent', 'getExtra', [params]);
     };
 
-
     WebIntent.prototype.onNewIntent = function(callback) {
         return cordova.exec(function(args) {
             callback(args);

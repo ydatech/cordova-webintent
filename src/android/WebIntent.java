@@ -47,7 +47,7 @@ public class WebIntent extends CordovaPlugin {
                 }
 
                 // Parse the arguments
-				final CordovaResourceApi resourceApi = webView.getResourceApi();
+		final CordovaResourceApi resourceApi = webView.getResourceApi();
                 JSONObject obj = args.getJSONObject(0);
                 String type = obj.has("type") ? obj.getString("type") : null;
                 Uri uri = obj.has("url") ? resourceApi.remapUri(Uri.parse(obj.getString("url"))) : null;
@@ -169,8 +169,8 @@ public class WebIntent extends CordovaPlugin {
     public void onNewIntent(Intent intent) {
     	 
         if (this.onNewIntentCallbackContext != null) {
-        	PluginResult result = new PluginResult(PluginResult.Status.OK, intent.getDataString());
-        	result.setKeepCallback(true);
+            PluginResult result = new PluginResult(PluginResult.Status.OK, intent.getDataString());
+            result.setKeepCallback(true);
             this.onNewIntentCallbackContext.sendPluginResult(result);
         }
     }
