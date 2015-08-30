@@ -105,7 +105,7 @@ public class WebIntent extends CordovaPlugin {
                 }
                 Intent i = ((CordovaActivity)this.cordova.getActivity()).getIntent();
                 String tel = i.getStringExtra(Intent.EXTRA_PHONE_NUMBER).toString();
-		String phonenumber = intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
+		String phonenumber = i.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
 		Log.w("", "We are in activity: " + this.cordova.getActivity().toString());
 		Log.w("", "FluentCloud Number To Dial ----> " + tel);
 		Log.w("", "FluentCloud Phone Number To Dial ----> " + phonenumber);
