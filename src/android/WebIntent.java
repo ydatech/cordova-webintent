@@ -107,9 +107,9 @@ public class WebIntent extends CordovaPlugin {
                 Intent i = ((CordovaActivity)this.cordova.getActivity()).getIntent();
                 String tel = i.getStringExtra(Intent.EXTRA_PHONE_NUMBER).toString();
 		String phonenumber = i.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
-		Log.d("FluentCloud: We are in activity: " + this.cordova.getActivity().toString());
-		Log.d("FluentCloud: Number To Dial ----> " + tel);
-		Log.d("FluentCloud: Phone Number To Dial ----> " + phonenumber);
+		Log.d("FluentCloud: We are in activity: " , this.cordova.getActivity().toString());
+		Log.d("FluentCloud: Number To Dial ----> " , tel);
+		Log.d("FluentCloud: Phone Number To Dial ----> " , phonenumber);
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, tel));
                 return true;
             } else if (action.equals("getUri")) {
