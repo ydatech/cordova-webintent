@@ -28,7 +28,8 @@
 				<category android:name="android.intent.category.DEFAULT" />
             		</intent-filter>
         	</receiver>
-		<activity android:name="com.borismus.webintent.WebIntent">
+		<!-- <activity android:name="com.borismus.webintent.WebIntent"> -->
+		<activity>
 			<intent-filter>
             			<action android:name="android.intent.action.MAIN" />
 				<action android:name="android.intent.action.DIAL"/>
