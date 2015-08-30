@@ -108,11 +108,21 @@ public class WebIntent extends CordovaPlugin {
                 }
 		Log.d("FluentCloud", "We are in activity: " + this.cordova.getActivity().toString());
                 Intent i = ((CordovaActivity)this.cordova.getActivity()).getIntent();
-                String tel = i.getStringExtra(Intent.EXTRA_PHONE_NUMBER).toString();
-		String phonenumber = i.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
-		Log.d("FluentCloud", "Number To Dial ----> " + tel);
-		Log.d("FluentCloud", "Phone Number To Dial ----> " + phonenumber);
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, tel));
+
+        	String calledNumber = null;
+        	String inputURI = i.getDataString();
+        	if (inputURI != null) {
+			Log.d("FluentCloud", "Got an Input URI");
+            		Uri uri = Uri.parse(Uri.decode(inputURI));
+            		if (uri.getScheme().equals("tel")) {
+                		calledNumber = uri.getSchemeSpecificPart();
+            		}
+        	} else {
+			Log.d("FluentCloud", "We didn't get our input URL data string");
+		}
+		  
+		Log.d("FluentCloud", "Number To Dial ----> " + calledNumber);
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, calledNumber));
                 return true;
             } else if (action.equals("getUri")) {
                 if (args.length() != 0) {
