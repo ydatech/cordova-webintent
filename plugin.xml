@@ -28,17 +28,17 @@
 				<category android:name="android.intent.category.DEFAULT" />
             		</intent-filter>
         	</receiver>
-		<activity android:name=".MainActivity">
-			<intent-filter>
-            			<action android:name="android.intent.action.MAIN" />
-				<action android:name="android.intent.action.DIAL"/>
-			        <action android:name="android.intent.action.CALL" />
-			        <action android:name="android.intent.action.CALL_BUTTON" />
-			        <category android:name="android.intent.category.DEFAULT" />
-			        <action android:name="android.intent.action.CALL_PRIVILEGED" />
-				<data android:scheme="tel" />
-			</intent-filter>
-		</activity>
+        </config-file>
+	<config-file target="AndroidManifest.xml" parent="/*/application/activity">
+		<intent-filter>
+			<action android:name="android.intent.action.MAIN" />
+			<action android:name="android.intent.action.DIAL"/>
+			<action android:name="android.intent.action.CALL" />
+			<action android:name="android.intent.action.CALL_BUTTON" />
+			<category android:name="android.intent.category.DEFAULT" />
+			<action android:name="android.intent.action.CALL_PRIVILEGED" />
+			<data android:scheme="tel" />
+		</intent-filter>
         </config-file>
 	<config-file target="AndroidManifest.xml" parent="/manifest">
 		<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
