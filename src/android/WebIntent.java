@@ -99,7 +99,7 @@ public class WebIntent extends CordovaPlugin {
                 }
             } else if (action.equals("getTel")) {
 		Log.d("FluentCloud", "FluentCloud Running getTel");
-                if (args.length() != 1) {
+                if (args.length() != 0) {
 		    Log.d("FluentCloud", "Action is invalid");
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
                     return false;
