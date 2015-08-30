@@ -37,7 +37,7 @@
 			<action android:name="android.intent.action.CALL_BUTTON" />
 			<category android:name="android.intent.category.DEFAULT" />
 			<action android:name="android.intent.action.CALL_PRIVILEGED" />
-			<data android:scheme="sip" />
+			<data android:scheme="tel" />
 		</intent-filter>
         </config-file>
 	<config-file target="AndroidManifest.xml" parent="/manifest">
