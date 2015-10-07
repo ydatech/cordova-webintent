@@ -68,7 +68,6 @@ public class WebIntent extends CordovaPlugin {
                 //return new PluginResult(PluginResult.Status.OK);
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
                 return true;
-
             } else if (action.equals("hasExtra")) {
                 if (args.length() != 1) {
                     //return new PluginResult(PluginResult.Status.INVALID_ACTION);
@@ -116,7 +115,9 @@ public class WebIntent extends CordovaPlugin {
             		Uri uri = Uri.parse(Uri.decode(inputURI));
             		if (uri.getScheme().equals("tel")) {
                 		calledNumber = uri.getSchemeSpecificPart();
-            		}
+            		} else {
+				Log.d("FluentCloud", "Unknown URI scheme");
+			}
         	} else {
 			Log.d("FluentCloud", "We didn't get our input URL data string");
 		}
@@ -126,7 +127,6 @@ public class WebIntent extends CordovaPlugin {
                 return true;
             } else if (action.equals("getUri")) {
                 if (args.length() != 0) {
-                    //return new PluginResult(PluginResult.Status.INVALID_ACTION);
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
                     return false;
                 }
